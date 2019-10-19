@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private isAuthenticated = false;
   private token: string;
-  private tokenTimer: NodeJS.Timer;
+  private tokenTimer: any;
   private authStatusListener = new Subject<boolean>();
 
   constructor(private _http: HttpClient,
