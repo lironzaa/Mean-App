@@ -14,6 +14,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './interceptor/auth-interceptor';
+import { ErrorInterceptor } from './interceptor/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,10 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
     MatPaginatorModule,
     FormsModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
