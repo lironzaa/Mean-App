@@ -1,5 +1,5 @@
 <mat-card>
-  <spinner class="d-flex justify-content-center" *ngIf="isLoading"></spinner>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
     <mat-form-field>
       <input matInput type="text" placeholder="Post Title" formControlName="title">
