@@ -23,6 +23,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
   isLoading = false;
   form: FormGroup;
   imagePreview: string;
+  ifNotImage: boolean = false;
 
   constructor(
     public postsService: PostsService,
@@ -85,6 +86,7 @@ export class PostCreateComponent implements OnInit, OnDestroy {
   onSavePost() {
     console.log(this.form.invalid);
     if (this.form.invalid) {
+      this.ifNotImage = true;
       return;
     }
     this.isLoading = true;

@@ -17,5 +17,6 @@
       <mat-error *ngIf="form.get('content').invalid">Please enter a valid content</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button color="accent">Save Post</button>
+    <mat-error *ngIf="ifNotImage">Image is mandatory</mat-error>
   </form>
 </mat-card>
