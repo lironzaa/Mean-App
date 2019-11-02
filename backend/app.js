@@ -8,7 +8,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://lironzaa:liroN123@mean-stack-3gvfj.mongodb.net/test?retryWrites=true&w=majority", { useCreateIndex: true, useNewUrlParser: true })
+mongoose.connect("mongodb+srv://lironzaa:" + process.env.MONGO_ATLAS_PW + "@mean-stack-3gvfj.mongodb.net/test?retryWrites=true&w=majority", { useCreateIndex: true, useNewUrlParser: true })
   .then(() => {
     console.log('connected to mongodb');
   })
